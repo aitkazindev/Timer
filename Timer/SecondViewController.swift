@@ -20,8 +20,13 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func timeCount(){
+        label.text = "\(time)"
+        time = time - 1
+    }
     @IBAction func play(_ sender: Any) {
-        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timeCount), userInfo: nil, repeats: true)
     }
     
     @IBAction func pause(_ sender: Any) {

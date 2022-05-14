@@ -10,16 +10,19 @@ import UIKit
 class SecondViewController: UIViewController {
     
     var timer = Timer()
-    var time : Int = 120
+    var totalTime : Int = 0
+    var time : Int = 0
     var isTimeRun : Bool = false
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
+        label.text = timeToString(intTime: totalTime)
+        progressView.progress = 0
+        time = totalTime
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     @objc func timeCount(){
@@ -29,7 +32,7 @@ class SecondViewController: UIViewController {
             isTimeRun = false
             return
         }
-        progressView.progress = 1 - Float(time)/120.0
+        progressView.progress = 1 - Float(time)/Float(totalTime)
         time = time - 1
     }
     
@@ -55,12 +58,15 @@ class SecondViewController: UIViewController {
     
     @IBAction func restart(_ sender: Any) {
         timer.invalidate()
-        time = 120
+        time = totalTime
         progressView.progress = 0
-        label.text = "\(time)"
+        label.text = ""
         isTimeRun = false
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
     /*
     // MARK: - Navigation
 

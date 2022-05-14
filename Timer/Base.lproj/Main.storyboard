@@ -17,13 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OEJ-QY-tnc">
+                                <rect key="frame" x="121" y="358" width="160" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rER-gc-Jyg">
-                                <rect key="frame" x="165" y="418" width="100" height="31"/>
+                                <rect key="frame" x="151" y="418" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start"/>
                                 <connections>
-                                    <segue destination="uK2-yO-vDA" kind="show" id="I9h-H3-Vjn"/>
+                                    <action selector="setTime:" destination="BYZ-38-t0r" eventType="touchDown" id="YAP-iS-jJT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -31,6 +37,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="iKs-cj-lyD"/>
+                    <connections>
+                        <outlet property="textField" destination="OEJ-QY-tnc" id="aQc-os-JKS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +48,7 @@
         <!--Second View Controller-->
         <scene sceneID="Q1z-7f-jKj">
             <objects>
-                <viewController id="uK2-yO-vDA" customClass="SecondViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uK2-yO-vDA" customClass="SecondViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DB9-jI-1Mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

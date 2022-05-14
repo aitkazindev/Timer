@@ -68,6 +68,10 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LqP-ei-czJ">
+                                <rect key="frame" x="93" y="210" width="251" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KLv-in-pIi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,11 +85,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="label" destination="uVP-1k-iya" id="Lqs-mv-jbj"/>
+                        <outlet property="progressView" destination="LqP-ei-czJ" id="UzQ-Fn-gFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkK-gV-dVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="84"/>
+            <point key="canvasLocation" x="1876.8115942028987" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DpJ-rU-uac">

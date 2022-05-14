@@ -14,6 +14,7 @@ class SecondViewController: UIViewController {
     var isTimeRun : Bool = false
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +23,24 @@ class SecondViewController: UIViewController {
     }
     
     @objc func timeCount(){
-        label.text = "\(time)"
+        label.text = timeToString(intTime: time)
         if time == 0 {
             timer.invalidate()
             isTimeRun = false
             return
         }
-        
+        progressView.progress = 1 - Float(time)/120.0
         time = time - 1
     }
+    
+    func timeToString(intTime : Int) -> String {
+        let second = intTime % 60
+        let minute = (intTime/60) % 60
+        let hour = intTime/3600
+        return String(format: "%0.2d:%0.2d:%0.2d", hour,minute,second)
+    }
     @IBAction func play(_ sender: Any) {
+        progressView.progress = 0
         if isTimeRun{
             return
         }
@@ -47,6 +56,7 @@ class SecondViewController: UIViewController {
     @IBAction func restart(_ sender: Any) {
         timer.invalidate()
         time = 120
+        progressView.progress = 0
         label.text = "\(time)"
         isTimeRun = false
     }
